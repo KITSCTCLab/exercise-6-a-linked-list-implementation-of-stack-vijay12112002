@@ -9,30 +9,31 @@ class Stack:
     self.head = None
 
   def push(self, data) -> None:
-    struct Node* newnode = (struct Node*) malloc(sizeof(struct Node))
-    newnode.data = val
-    newnode.next = top
-    top = newnode
-    
+    # Write your code here
+    new_node = Node(data)
+    new_node.next = self.head
+    self.head = new_node
+
   def pop(self) -> None:
-    if(top==NULL):
-        print("Stack Underflow")
-    else:
-        struct Node* temp = top
-        print("The popped element is ", top.data)
-        top = top.next
-        free (temp)
-  
+    # Write your code here
+    if(self.head != None): 
+      temp = self.head
+      self.head = temp.next
+      temp.next = None
+
   def status(self):
-    struct Node* ptr
-    if(top==NULL):
-        cout<<"stack is empty";
-    else: 
-        ptr = top
-    print("Stack elements are: ")
-    while (ptr != NULL):
-      print(ptr.data, " ")
-      ptr = ptr->next
+    """
+    It prints all the elements of stack.
+    """
+    # Write your code here  
+    if(self.head != None):
+      temp = self.head
+      while(temp.next != None):
+        print(temp.data, end = "=>")
+        temp = temp.next
+   
+      
+    
 
 # Do not change the following code
 stack = Stack()
